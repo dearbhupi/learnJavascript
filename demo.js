@@ -34,4 +34,18 @@ console.log(person["isStudent"]);
 let numbers = [1, 2, 3, 4, 5];
 console.log(numbers[0]);
 console.log(numbers[1]);
-console.log(numbers[2]);        
+console.log(numbers[2]);     
+// for array we can also use the dot notation to access the array elements but it is not recommended because it is not a good practice. we can use the at() method to access the array elements.    
+console.log(numbers.at(0));
+console.log(numbers.at(1));
+console.log(numbers.at(2));
+
+
+// variable assignment and value copying IMPORTANT concept to understand
+let a1 ="bhupinder";
+let b1 = a1;
+console.log("value of a1 = " + a1);
+console.log("value of b1 = " + b1);
+a1 = "John";
+console.log("value of a1 is = " + a1);
+console.log("value of b1 is = " + b1);
