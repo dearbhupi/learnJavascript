@@ -31,14 +31,26 @@ console.log(person["age"]);
 console.log(person["isStudent"]);
 
 // array data type
-let numbers = [1, 2, 3, 4, 5];
-console.log(numbers[0]);
-console.log(numbers[1]);
-console.log(numbers[2]);     
 // for array we can also use the dot notation to access the array elements but it is not recommended because it is not a good practice. we can use the at() method to access the array elements.    
+let numbers = [1, 2, 3, 4, 5];
+// if data type is same then it will return array
+console.log("the type of numbers is: ", typeof(numbers));
 console.log(numbers.at(0));
 console.log(numbers.at(1));
 console.log(numbers.at(2));
+
+
+let arr = ["1", 2, null, true, undefined, {name: "John", age: 30}, [1, 2, 3]];
+console.log("the type of arr is: ", typeof(arr)); // if the data type is different then it will return object 
+console.log(arr[0]);
+console.log(arr[1]);
+console.log(arr[2]);     
+console.log(arr[3]);
+console.log(arr[4]);
+console.log(arr[5].name);   
+console.log(arr[5].age);
+
+
 
 
 // variable assignment and value copying IMPORTANT concept to understand
