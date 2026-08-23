@@ -12,6 +12,47 @@
         <li> if you want to run the javascript code without the node, then put the javascript code in the script tag and run the html file in the browser and then right click and inspect and go to console, you will find all the javascript code values.</li>
         <li> to run the javascript code into debug mode go to source tab and put some breakpoints and refresh and run the debugger.</li>
     </ul>
+
+        <ul>
+            <h1> Javascript functions</h1>
+            <p>
+            <h2>Hoisting :  </h2>
+            <li> In javascript, you can call the function / variable before defining it. This is called hoisting.</li>
+                </p>
+
+                <p2p>
+                    Hosting is happen as in Javascript, when Javascropt code comple it make the GLOBAL execution context and in that it make the memory allocation for the variables and functions. So, when you call the function or variable before defining it, it will be available in the memory and you can use it. But if you try to access the variable before defining it, it will give you undefined because the variable is not initialized yet. 
+                </p2p>
+                <p> Global Context
+                    <ul>
+                        <li> In javascript, when you run the code, it will create a global execution context. This is called global context.</li>
+                        <li> In global context, you can access the variables and functions defined in the global scope.</li>
+                        <li> it have two phases, first is memory allocation phase and second is code execution phase.</li>  
+                        <li> In memory allocation phase, it will allocate memory for the variables and functions defined in the global scope.</li>
+                        <li> In code execution phase, it will execute the code line by line.</li
+                        <li> Javascprint is a single threaded language, so it will execute the code line by line.</li>
+                        </ul>
+                    </p>
+        <li> you can create an arrow function which is kind of lambda function in python</li>
+        <li> to run the javascript code into debug mode go to source tab and put some breakpoints and refresh and run the debugger.</li>
+    </ul>
+
+     <ul>
+            <h1> Global Object</h1>
+            <p>
+            <h2>this and window </h2>
+            <li> In javascript, this is a keyword which refers to the object which is executing the current function. </li>
+            <li> In global context, this refers to the global object which is window in browser and global in node.js.</li>
+         </ul>
+
+
+              <ul>
+            <h1> difference between let, const and var</h1>
+            <li> In javascript, var is function scoped and let and const are block scoped.</li>
+            <li> var can be re-declared and updated, let can be updated but not re-declared, const cannot be updated or re-declared.</li>
+            <li> var is hoisted and initialized with undefined, let and const are hoisted but not initialized.</li> 
+            
+           </ul>
     <script src="demo.js"></script>
 </body>
 </html>

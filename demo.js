@@ -61,3 +61,124 @@ console.log("value of b1 = " + b1);
 a1 = "John";
 console.log("value of a1 is = " + a1);
 console.log("value of b1 is = " + b1);
+
+
+
+// functions declaration and calling
+
+greet("Bob");
+// you can called the function before it is declared because of hoisting in JavaScript. but it is not a good practice to do so. it is better to declare the function before calling it.
+
+function greet(name) {
+    console.log("Hello, " + name + "!");
+}
+
+greet("Alice");
+
+
+// arrow function
+const add = (a, b) => {
+    return a + b;
+};
+
+console.log("Sum of 5 and 3 is: " + add(5, 3));
+
+console.log("Hosting variable value is " + hostingVar); // undefined
+var hostingVar = "I am a hoisted variable";
+
+console.log(hostingVar); // "I am a hoisted variable"
+
+// this and window object
+
+console.log(this); // window object
+//console.log(window); // window object
+
+function showThis() {
+    console.log(this); // window object
+}
+
+showThis();
+
+const obj = {
+    name: "John",
+    showThis: function() {
+        console.log(this); // obj
+    }
+};
+
+obj.showThis();
+
+const arrowFunc = () => {
+    console.log(this); // window object
+};
+
+arrowFunc();
+
+let name = "John";
+function showName() {
+    console.log(this.name); // undefined
+}
+
+showName();
+
+const obj2 = {
+    name: "Alice",
+    showName: function() {
+        console.log(this.name); // "Alice"
+        //console.log(window.name); // "John"
+    }
+};
+
+obj2.showName();
+
+const arrowFunc2 = () => {
+    console.log(this.name); // undefined
+     //console.log(window.name); // "John"
+};
+
+arrowFunc2();
+
+// let, const, and var
+
+console.log("Demonstrating let, const, and var");
+console.log("let and const are block scoped and var is function scoped.");
+console.log("let and const cannot be redeclared in the same scope but var can be redeclared.");
+console.log("let and const cannot be reassigned but var can be reassigned.");
+
+
+
+//console.log(letvar); // ReferenceError: Cannot access 'letVar' before initialization    
+//console.log(constVar); // ReferenceError: Cannot access 'constVar' before initialization
+console.log(varVar); // undefined
+
+let letVar = "I am a let variable";
+const constVar = "I am a const variable";   
+var varVar = "I am a var variable";
+
+console.log(letVar);
+console.log(constVar);
+console.log(varVar);
+
+// let and const are block scoped and var is function scoped.   
+
+{
+    let blockLet = "I am a block scoped let variable";
+    console.log(blockLet);
+    let blockConst = "I am a block scoped const variable";
+    console.log(blockConst);
+    var blockVar = "I am a block scoped var variable";
+    console.log(blockVar);
+
+
+}
+
+//console.log(blockLet); // ReferenceError: blockLet is not defined
+console.log("accessing the blocked outside the block", blockVar); // "I am a block scoped var variable" because var is function scoped and not block scoped. so it can be accessed outside the block. but let and const are block scoped so they cannot be accessed outside the block.
+
+function testVar() {
+    var functionVar = "I am a function scoped var variable";
+    console.log(functionVar);
+}
+
+testVar();
+//console.log(functionVar); // ReferenceError: functionVar is not defined because functionVar is function scoped and cannot be accessed outside the function.
