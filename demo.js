@@ -155,19 +155,19 @@ let letVar = "I am a let variable";
 const constVar = "I am a const variable";   
 var varVar = "I am a var variable";
 
-console.log(letVar);
-console.log(constVar);
-console.log(varVar);
+console.log(letVar); // "I am a let variable"
+console.log(constVar);// "I am a const variable"
+console.log(varVar);// "I am a var variable"
 
 // let and const are block scoped and var is function scoped.   
 
 {
     let blockLet = "I am a block scoped let variable";
-    console.log(blockLet);
+    console.log(blockLet); // "I am a block scoped let variable"
     let blockConst = "I am a block scoped const variable";
-    console.log(blockConst);
+    console.log(blockConst); // "I am a block scoped const variable"
     var blockVar = "I am a block scoped var variable";
-    console.log(blockVar);
+    console.log(blockVar);  // "I am a block scoped var variable"
 
 
 }
@@ -175,10 +175,117 @@ console.log(varVar);
 //console.log(blockLet); // ReferenceError: blockLet is not defined
 console.log("accessing the blocked outside the block", blockVar); // "I am a block scoped var variable" because var is function scoped and not block scoped. so it can be accessed outside the block. but let and const are block scoped so they cannot be accessed outside the block.
 
+
+// function scoped var variable AKA lexical scoping
 function testVar() {
-    var functionVar = "I am a function scoped var variable";
-    console.log(functionVar);
+    let functionVar = "I am a function scoped var variable";
+    console.log(functionVar);// "I am a function scoped var variable"
 }
 
 testVar();
 //console.log(functionVar); // ReferenceError: functionVar is not defined because functionVar is function scoped and cannot be accessed outside the function.
+
+
+function addNumbers(a, b) {
+    return a + b;
+}
+
+console.log("Sum of 5 and 10 is: " + addNumbers(5, 10));
+console.log(addNumbers);
+
+let addNumbers2 = function(a, b) {
+    return a + b;
+};
+
+console.log("Sum of 15 and 20 is: " + addNumbers2(15, 20));
+console.log(addNumbers2);
+
+
+// higher order function : when a function  is passed as an argument to another function
+
+let sum = function(a, b) {
+    return a + b;
+};
+
+let diff = function(a, b) {
+    return a - b;
+};
+
+let multiply = function(a, b) {
+    return a * b;
+};
+
+let divide = function(a, b) {
+    return a / b;
+};
+
+function calculate(a, b, operation) {
+    return operation(a, b);
+}
+
+console.log("Sum of 5 and 10 is: " + calculate(5, 10, sum));
+console.log("Difference of 15 and 5 is: " + calculate(15, 5, diff));
+console.log("Product of 5 and 10 is: " + calculate(5, 10, multiply));
+console.log("Division of 20 by 4 is: " + calculate(20, 4, divide));
+
+// arrow function and higher order function
+const addArrow = (a, b) => a + b;
+const subtractArrow = (a, b) => a - b;
+
+function calculateArrow(a, b, operation) {
+    return operation(a, b);
+}
+
+console.log("Sum of 5 and 10 is: " + calculateArrow(5, 10, addArrow));
+console.log("Difference of 15 and 5 is: " + calculateArrow(15, 5, subtractArrow));
+
+
+// closure : when a function is defined inside another function and the inner function has access to the outer function's variables even after the outer function has returned.
+
+function outer(){
+    function inner(){
+        console.log("I am the inner function");
+    }
+    return inner;
+}
+let result = outer();
+console.log(result); // [Function: inner]
+result(); // "I am the inner function"
+
+function outerFunction(outerVariable) {
+    return function innerFunction(innerVariable) {
+        console.log("Outer Variable: " + outerVariable);
+        console.log("Inner Variable: " + innerVariable);
+    };
+}
+
+const newFunction = outerFunction("outside");
+newFunction("inside");
+
+// another example of closure
+
+function makeCounter() {
+    let count = 0;
+    return function() {
+        count++;
+        return count;
+    };
+}
+
+const counter = makeCounter();
+console.log(counter()); // 1
+console.log(counter()); // 2
+console.log(counter()); // 3
+
+function cookieJar() {
+    let cookies = 10;
+    return  function takeCookies() {
+        cookies--;
+        return cookies;
+    };
+}   
+
+const myCookieJar = cookieJar();
+console.log(myCookieJar());
+console.log(myCookieJar());
+console.log(myCookieJar());

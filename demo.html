@@ -51,8 +51,74 @@
             <li> In javascript, var is function scoped and let and const are block scoped.</li>
             <li> var can be re-declared and updated, let can be updated but not re-declared, const cannot be updated or re-declared.</li>
             <li> var is hoisted and initialized with undefined, let and const are hoisted but not initialized.</li> 
-            
+
            </ul>
+
+           <ul>
+            <h1> difference between == and ===</h1>
+            <li> In javascript, == is used for comparison of values and === is used for comparison of values and types.</li>
+            <li> == is called loose equality operator and === is called strict equality operator.</li>
+            <li> == will convert the values to the same type before comparing them and === will not convert the values to the same type before comparing them.</li>
+           </ul>
+
+           <ul>
+            <ul>
+                <h1> lexical scoping and dynamic scoping</h1>
+                <li> In javascript, lexical scoping means that the scope of a variable is determined by its position in the source code and dynamic scoping means that the scope of a variable is determined by the call stack at runtime.</li>
+                <li> In lexical scoping, the scope of a variable is determined by its position in the source code and in dynamic scoping, the scope of a variable is determined by the call stack at runtime.</li>
+                </ul>
+            <ul>    
+           
+            <h1> difference between null and undefined</h1>
+            <li> In javascript, null is an assignment value which means no value and undefined means a variable has been declared but has not yet been assigned a value.</li>
+            <li> null is an object and undefined is a type of undefined.</li>
+            <li> null is falsy and undefined is also falsy.</li>
+            </ul>
+
+    <ul>
+            <h1> difference between synchronous and asynchronous</h1>
+            <li> In javascript, synchronous code is executed line by line and asynchronous code is executed in parallel.</li>
+            <li> Synchronous code is blocking and asynchronous code is non-blocking.</li>
+            <li> Synchronous code is executed in the order it is written and asynchronous code is executed in the order it is completed.</li>
+            <li> Synchronous code is executed in the main thread and asynchronous code is executed in the event loop.</li>
+           </ul>
+
+    <ul>
+            <h1> difference between call, apply and bind</h1>
+            <li> In javascript, call and apply are used to invoke a function with a specific this value and arguments and bind is used to create a new function with a specific this value and arguments.</li>
+            <li> call and apply are used to invoke a function immediately and bind is used to create a new function which can be invoked later.</li>
+            <li> call and apply are used to invoke a function with a specific this value and arguments and bind is used to create a new function with a specific this value and arguments.</li>
+           </ul>
+
+    <ul>
+        <h1> what are functions in javascript</h1>
+        <li> In javascript, functions are first class citizens which means that they can be assigned
+    to variables, passed as arguments to other functions and returned from other functions.</li>
+        <li> Functions are used to create reusable code and to create higher order functions.</li>
+        <li> Functions can be defined using function declaration, function expression and arrow function.</li>
+    </ul>
+
+    <ul>
+        <h1> what are higher order functions in javascript</h1>
+        <li> In javascript, higher order functions are functions which can take other functions as arguments and can return other functions as return values.</li>
+        <li> Higher order functions are used to create reusable code and to create function composition.</li>
+        <li> Higher order functions can be defined using function declaration, function expression and arrow function.</li>
+
+    <ul>
+        <h1> function currying</h1>
+        <li> In javascript, function currying is a technique of evaluating function with multiple arguments into sequence of functions with single argument.</li>
+        <li> In function currying, the first function takes the first argument and returns a new function which takes the second argument and so on until all the arguments are provided and the final function returns the result.</li>
+        <li> Function currying is used to create higher order functions and to create reusable functions.</li>
+        <li> example of function currying is given below:</li>
+        function add(a) {
+         return function(b) {
+         return a + b;
+         }}
+            const add5 = add(5);
+         console.log(add5(10)); // 15</li>
+    </ul>
+
+        
     <script src="demo.js"></script>
 </body>
 </html>
