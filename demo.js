@@ -289,3 +289,106 @@ const myCookieJar = cookieJar();
 console.log(myCookieJar());
 console.log(myCookieJar());
 console.log(myCookieJar());
+
+
+let aa = 10;
+function outerFunction2() {
+    let bb = 20;
+    function innerFunction2() {
+        let cc = 30;
+        console.log(aa + bb + cc); // 60
+    }
+    innerFunction2();
+}
+
+let result2 = outerFunction2();
+console.log(result2); // undefined because the outer function does not return anything. but the inner function has access to the outer function's variables even after the outer function has returned. this is called closure.
+aa = 100;
+bb = 200;
+cc = 300;
+console.log(outerFunction2());
+//result2(); // 60 because the inner function has access to the outer function's variables even after the outer function has returned. this is called closure. 
+console.log(aa + bb + cc); // 600 because the variables aa, bb, and cc are in the global scope and can be accessed from anywhere in the code.
+
+// how to handle asynchronous code in JavaScript using callbacks, promises, and async/await
+
+// callback function
+function fetchData(callback) {
+    setTimeout(() => {
+        const data = "Data fetched from server using callback";
+        callback(data);
+    }, 10000);
+}
+
+fetchData((data) => {
+    console.log(data); // "Data fetched from server"
+});
+
+function fetchDataWithError(callback) {
+    setTimeout(() => {
+        const error = "Error fetching data from server";
+        callback(null, error);
+    }, 1000);
+}
+
+function handleData(data, error) {
+    if (error) {
+        console.error(error);
+    } else {
+        console.log(data);
+    }
+}
+
+fetchDataWithError(handleData);
+  
+
+// issues with callback functions is that they can lead to callback hell and make the code hard to read and maintain. To solve this problem, we can use promises and async/await.
+
+asyncOperation1(arg1, (result1) => {
+    asyncOperation2(result1, (result2) => {
+        asyncOperation3(result2, (result3) => {
+            asyncOperation4(result3, (result4) => {
+            // do something with result1, result2, and result3
+            });
+        });
+    });
+});
+    // the above code is an example of callback hell. it is hard to read and maintain. To solve this problem, we can use promises and async/await.
+    // also know as pyramid of doom because of the indentation.
+    // to solve this problem, we can use promises and async/await.
+
+// promise
+// a promise is an object that represents the eventual completion (or failure) of an asynchronous operation and its resulting value. A promise can be in one of three states: pending, fulfilled, or rejected.
+// a promise is a placeholder for a value that will be available in the future. A promise can be created using the Promise constructor and it takes a function as an argument. The function takes two arguments: resolve and reject. The resolve function is called when the asynchronous operation is successful and the reject function is called when the asynchronous operation fails.
+// a promise can be consumed using the then() and catch() methods. The then() method is called when the promise is fulfilled and the catch() method is called when the promise is rejected.
+// a promise can also be consumed using the async/await syntax. The async keyword is used to declare a function as asynchronous and the await keyword is used to wait for a promise to be fulfilled or rejected.
+// async/await is a syntactic sugar over promises. It makes the asynchronous code look like synchronous code and makes it easier to read and maintain.
+// example of promise
+function fetchDataPromise() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const data = "Data fetched from server using promise";
+            resolve(data);
+        }, 2000);
+    });
+}
+
+fetchDataPromise()
+    .then((data) => {
+        console.log(data); // "Data fetched from server"
+    })
+    .catch((error) => {
+        console.error(error);
+    });
+
+// async/await
+async function fetchDataAsync() {
+    try {
+        const data = await fetchDataPromise();
+        console.log(data); // "Data fetched from server"
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+fetchDataAsync();   

@@ -117,6 +117,22 @@
             const add5 = add(5);
          console.log(add5(10)); // 15</li>
     </ul>
+    <ul>
+        <>h1> what are callbacks in javascripts</h1>
+        <li> In javascript, callbacks are functions which are passed as arguments to other functions and are invoked after the completion of the outer function.</li>
+        <li> Callbacks are used to create asynchronous code and to create higher order functions.</li>
+        <li> Callbacks can be defined using function declaration, function expression and arrow function.</li>
+        <li> Example of callback is given below:</li>
+        function fetchData(callback) {
+        setTimeout(function() {
+        const data = { name: 'John', age: 30 };
+        callback(data);
+        }, 2000);
+        }
+        function displayData(data) {
+        console.log(data);
+        }
+        fetchData(displayData); // { name: 'John', age: 30 }</li
 
         
     <script src="demo.js"></script>
