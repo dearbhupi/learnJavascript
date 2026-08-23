@@ -344,15 +344,15 @@ fetchDataWithError(handleData);
 
 // issues with callback functions is that they can lead to callback hell and make the code hard to read and maintain. To solve this problem, we can use promises and async/await.
 
-asyncOperation1(arg1, (result1) => {
-    asyncOperation2(result1, (result2) => {
-        asyncOperation3(result2, (result3) => {
-            asyncOperation4(result3, (result4) => {
-            // do something with result1, result2, and result3
-            });
-        });
-    });
-});
+// asyncOperation1(arg1, (result1) => {
+//     asyncOperation2(result1, (result2) => {
+//         asyncOperation3(result2, (result3) => {
+//             asyncOperation4(result3, (result4) => {
+//             // do something with result1, result2, and result3
+//             });
+//         });
+//     });
+// });
     // the above code is an example of callback hell. it is hard to read and maintain. To solve this problem, we can use promises and async/await.
     // also know as pyramid of doom because of the indentation.
     // to solve this problem, we can use promises and async/await.
@@ -381,7 +381,10 @@ fetchDataPromise()
         console.error(error);
     });
 
+
+
 // async/await
+
 async function fetchDataAsync() {
     try {
         const data = await fetchDataPromise();
@@ -392,3 +395,58 @@ async function fetchDataAsync() {
 }
 
 fetchDataAsync();   
+
+// other important concepts are map, reduce and filter methods of array, destructuring, spread operator, rest operator, template literals, default parameters, and many more. I will cover them in the next demo file.
+
+// 1. map method of array
+let numbersArray = [1, 2, 3, 4, 5];
+let squaredNumbers = numbersArray.map((number) => number * number);
+console.log(squaredNumbers); // [1, 4, 9, 16, 25]
+
+// 2. reduce method of array
+let sumOfNumbers = numbersArray.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+console.log(sumOfNumbers); // 15
+
+// 3. filter method of array
+let evenNumbers = numbersArray.filter((number) => number % 2 === 0);
+console.log(evenNumbers); // [2, 4]
+
+// 4. destructuring
+let person2 = {
+    name: "Alice",
+    age: 25,
+    city: "New York"
+};
+let { name: personName, age: personAge, city: personCity } = person2;
+console.log(personName); // "Alice"
+console.log(personAge); // 25
+console.log(personCity); // "New York"
+
+// 5. spread operator
+let arr1 = [1, 2, 3];
+let arr2 = [...arr1, 4, 5, 6];
+console.log(arr2); // [1, 2, 3, 4, 5, 6]
+
+// 6. rest operator
+function sumAll(...numbers) {
+    return numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+}
+console.log(sumAll(1, 2, 3, 4, 5)); // 15
+
+// 7. template literals
+let name2 = "Bob";
+let greeting = `Hello, ${name2}!`;
+console.log(greeting); // "Hello, Bob!"
+
+// 8. default parameters
+function greet2(name = "Guest") {
+    console.log(`Hello, ${name}!`);
+}
+greet2(); // "Hello, Guest!"
+greet2("Charlie"); // "Hello, Charlie!"
+
+// 9. for...of loop
+let fruits = ["apple", "banana", "cherry"];
+for (let fruit of fruits) {
+    console.log(fruit);
+}   
