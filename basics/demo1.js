@@ -66,6 +66,54 @@ console.table([accountId, accountEmail, accountPassword, accountCity])
 // console.log(age);
 // console.log(isMarried);
 
+
+
+const scope = 33
+console.log(scope)
+console.log(typeof scope) // number
+
+// let convertedToString = String(scope)
+// console.log(convertedToString)
+// console.log(typeof convertedToString) // string
+
+// let convertedToBoolean = Boolean(scope)
+// console.log(convertedToBoolean)
+// console.log(typeof convertedToBoolean) // boolean
+
+// let convertedToNumber = Number(scope)
+// console.log(convertedToNumber)
+// console.log(typeof convertedToNumber) // number 
+
+
+// now interview qeustion
+const str = '33aa'
+console.log(str)
+console.log(typeof str) // string
+
+let convertedToString = String(str)
+console.log(convertedToString)
+console.log(typeof convertedToString) // string
+
+let convertedToBoolean = Boolean(str)
+console.log(convertedToBoolean)
+console.log(typeof convertedToBoolean) // boolean
+
+let convertedToNumber = Number(str)
+console.log(convertedToNumber)
+console.log(typeof convertedToNumber) // number
+
+// notes when we convert a string to a number using the Number() function, if the string contains any non-numeric characters, the conversion will result in NaN (Not a Number). In this case, since the string '33aa' contains non-numeric characters, the conversion to number will result in NaN.
+// "33"   =>(convert to Number)=> Number => value is  33 
+// "33aa" =>(convert to Number)=> Number => value is NaN
+// true =>(convert to Number)=> Number => value is 1
+// false =>(convert to Number)=> Number => value is 0
+// null =>(convert to Number)=> Number => value is 0
+// undefined =>(convert to Number)=> Number => value is NaN
+// NaN =>(convert to Number)=> Number => value is NaN
+
+
+
+
 // interview questsion => what is the difference between null and undefined ?
 console.log(typeof null); // object
 console.log(typeof undefined); // undefined
@@ -76,3 +124,77 @@ console.log(null === undefined); // false
 // interview question => what is the difference between == and === ?
 console.log(1 == '1'); // true
 console.log(1 === '1'); // false
+
+// https://tc39.es/ecma262/#sec-ecmascript-data-types-and-values
+
+
+let value = 3
+let negValue = -value
+console.log(value) // 3
+console.log(negValue) // -3
+
+let strValue = '3'
+let negStrValue = -strValue
+console.log(strValue) // '3'
+console.log(negStrValue) // -3
+
+let boolValue = true
+let negBoolValue = -boolValue
+console.log(boolValue) // true
+console.log(negBoolValue) // -1
+
+let nullValue = null
+let negNullValue = -nullValue
+console.log(nullValue) // null
+console.log(negNullValue) // 0
+
+let undefinedValue = undefined
+let negUndefinedValue = -undefinedValue
+console.log(undefinedValue) // undefined
+console.log(negUndefinedValue) // NaN
+
+
+
+console.log(2+2) // 4
+console.log(2-2) // 0
+console.log(2*2) // 4
+console.log(2/2) // 1
+console.log(2%2) // 0
+console.log(2**2) // 4  
+
+let str1 = 'Hello'
+let str2 = 'World'
+console.log(str1 + ' ' + str2) // Hello World
+console.log(str1 + str2) // HelloWorld
+console.log(str1 + 2) // Hello2
+console.log(2 + str1) // 2Hello
+console.log(str1 + true) // Hellotrue
+console.log(true + str1) // trueHello       
+console.log(str1 + null) // Hellonull
+console.log(str1 + undefined) // Helloundefined
+
+console.log('1'+ 1);
+console.log(2+'2');
+console.log(2 + 2 + '2') // 42
+console.log('2' + 2 + 2) // 222
+console.log('2' + (2 + 2)) // 24    
+
+
+
+// more to study https://developer.mozilla.org/en-US/docs/Web/API/console/log_static
+
+
+// difference between == and ===
+// === is the strict check whereas == just check teh value
+
+console.log('2'== 2) // true
+console.log('2'=== 2) // false
+
+console.log(null > 0); // false as here the value of null is assumed to be 0
+console.log(null == 0); // false
+console.log(null >=0); // true
+
+
+console.log(undefined < 0); // false
+console.log(undefined == 0); // false
+console.log(undefined >=0); // false
