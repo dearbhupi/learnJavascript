@@ -24,6 +24,8 @@ console.log(accountCity);
 
 console.table([accountId, accountEmail, accountPassword, accountCity]); // this will print the data in table format and it will print the value of variable as it will print the key and value pair.    
 /*
+
+*** PLEASE VISIT THE https://tc39.es/ecma262/ FOR MORE INFORMATION ABOUT JAVASCRIPT AND ITS FEATURES ***SS
  ~/VSCodeProjects/chaiPerCode/Chapter1  main !1  node demo1.js                                                                            ✔  02:10:26 PM 
 
 console.table({accountId, accountEmail, accountPassword, accountCity});
@@ -48,3 +50,29 @@ console.table([accountId, accountEmail, accountPassword, accountCity])
 └─────────┴───────────────────────┘ 
 */
 
+// let name = 'Bhupinder Singh';
+// let age = 30;
+// let isMarried = false;
+// null => standalone value that represents nothing or no value
+// undefined => standalone value that represents a variable that has not been assigned a value yet
+// bigint => a primitive data type that can represent integers with arbitrary precision
+// symbol => a primitive data type that can be used to create unique identifiers for objects
+// example of symbol => const uniqueId = Symbol('id'); // this will create a unique identifier for the object
+// object => a collection of key-value pairs that can be used to store and manipulate data
+// example of object => const person = { name: 'Bhupinder Singh', age: 30, isMarried: false };
+
+
+// console.log(name);
+// console.log(age);
+// console.log(isMarried);
+
+// interview questsion => what is the difference between null and undefined ?
+console.log(typeof null); // object
+console.log(typeof undefined); // undefined
+
+console.log(null == undefined); // true
+console.log(null === undefined); // false
+
+// interview question => what is the difference between == and === ?
+console.log(1 == '1'); // true
+console.log(1 === '1'); // false
