@@ -67,6 +67,43 @@ console.table([accountId, accountEmail, accountPassword, accountCity])
 // console.log(isMarried);
 
 
+// Question JS is dynamic or static language ? 
+/*JavaScript is a dynamically typed language.
+
+This means you do not have to explicitly declare a variable's data type before using it, and a single 
+variable can hold different types of values (such as strings, numbers, or arrays) during its lifetime.
+ The type is determined at runtime based on the value assigned to the variable.
+
+For example, this is perfectly valid in JavaScript:
+
+JavaScript
+let myVariable = "Hello"; // myVariable is currently a string
+myVariable = 42;          // myVariable is now a number
+
+whereas in TypeScipt we specifically mentioend the type of the varialble
+
+let myVariable:string = "Hello"; // myVariable is currently a string
+myVariable = 42;          // myVariable can not be a number
+
+
+In a statically typed language (like Java, C++, or TypeScript), you must declare the type upfront, 
+and assigning a number to a variable originally declared as a string would result in an error.'*/
+// Datatype 
+/* 
+Primitive datatype
+1. String
+2. Number
+3. boolean
+4. null
+5. undefined
+6. Symbol
+7. BigInt
+
+Reference ( Non primitive data type)
+1. Array
+2. Objects
+3. Functions
+*/
 
 const scope = 33
 console.log(scope)
@@ -198,3 +235,12 @@ console.log(null >=0); // true
 console.log(undefined < 0); // false
 console.log(undefined == 0); // false
 console.log(undefined >=0); // false
+
+
+let id = Symbol(123);
+let secondId = Symbol(123)
+
+console.log("id===secondId :",id===secondId);
+console.log('id==secondId : ', id==secondId)
+console.log(id)
+console.log(secondId)
