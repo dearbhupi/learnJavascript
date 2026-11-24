@@ -5,7 +5,89 @@
 }
 
 html, body{
+    height: 100%; /*it could be auto or 100 vh, (view height) */
+    width: 100%;
+  
+}
+
+#main{
     height: 100%;
     width: 100%;
+}
+
+#hero{
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+
+}
+#nav{
+    width: 100%;
+    height: 10vh;
+    background-color: #030303;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
     font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+}
+
+#nav a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#heading{
+/* 
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 5%; */
+    line-height: 1;
+    opacity: .60;
+    margin-left: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 5vw;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #ffffff;
+}
+#heading #secondh1{
+    font-size: 10vw;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.blocktext{
+    width: 100%;
+    /* height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 5%;
+    line-height: 1.5;
+    opacity: .60;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2vw; */
+    text-transform: uppercase;
+    font-weight: 300;
+    color: #ffffff;
+}
+
+#otherheading{
+    margin-top: 20px;
+    font-size: 1.2rem;
+}
+#otherheading h6{
+    margin-top: 20px;
+    font-size: 1.2rem;
 }
